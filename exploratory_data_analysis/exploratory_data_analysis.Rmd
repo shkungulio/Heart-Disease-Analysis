@@ -293,7 +293,7 @@ HeartDiseaseScatter <- function(point1, point2){
 
 #### **Boxplots**
 Create boxplots of continuous variables.  
-```{r, fig.width = 12, fig.height = 12}
+```{r, fig.width = 10, fig.height = 10}
 # Create the plots
 p1 <- HeartDiseaseBoxplot("target", "age")
 p2 <- HeartDiseaseBoxplot("target", "trestbps")
@@ -314,7 +314,7 @@ p5 <- HeartDiseaseBoxplot("target", "oldpeak")
 
 #### **Barplots**
 Create the distribution of heart disease by categorical variables
-```{r, fig.width = 12, fig.height = 16}
+```{r, fig.width = 10, fig.height = 14}
 # Create the plots
 g1 <- ggplot(Heart.df, aes(x=target, fill=target))+
   geom_bar() + theme_test() +
@@ -342,7 +342,7 @@ g8 <- HeartDiseaseBar("thal")
 
 #### **Histogram Distributions**
 Create histogram distributions of continuous variables.  
-```{r, fig.width = 12, fig.height = 12}
+```{r, fig.width = 10, fig.height = 10}
 # Create the plots
 p1 <- HeartDiseaseHist("age")
 p2 <- HeartDiseaseHist("trestbps")
@@ -363,7 +363,7 @@ p5 <- HeartDiseaseHist("oldpeak")
 
 #### **Scaterplots**
 Create scatterplots of continuous variables. 
-```{r scatterplot, fig.width = 12, fig.height = 16}
+```{r scatterplot, fig.width = 10, fig.height = 14}
 # Create the plots
 p1 <- HeartDiseaseScatter("age", "oldpeak")
 p2 <- HeartDiseaseScatter("age", "chol")
@@ -387,7 +387,7 @@ p7 <- HeartDiseaseScatter("thalach", "oldpeak")
 
 #### **Pair Plots**
 Pairwise relationship between multiple continuous variables
-```{r pair_plots, fig.width = 12, fig.height = 6}
+```{r pair_plots, fig.width = 10, fig.height = 5}
 # Create a colored pair plot for selected variables
 ggpairs(Heart.df[, c("age", "trestbps", "chol", 
                      "thalach", "oldpeak", "target")], 
