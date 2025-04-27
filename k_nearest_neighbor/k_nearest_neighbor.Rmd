@@ -1,5 +1,5 @@
 ---
-title: "Forecasting Heart Disease Risks: Decision Trees"
+title: "Forecasting Heart Disease Risks: k-Nearest Neighbor (KNN)"
 output:
   flexdashboard::flex_dashboard:
     logo: "../image/logo.gif"
@@ -131,23 +131,21 @@ knitr::include_graphics("../image/heart.png")
 Column {data-width=150 .tabset}
 -----------------------------------------------------------------------
 
-### Decision Trees
+### k-Nearest Neighbor
 
-**Overview:**  
+**Overview:**
 
-- A model that splits the data into branches to form a tree based on feature values.
-- Each internal node represents a decision rule, and each leaf node represents an outcome.
+- A simple, instance-based learning method.
+- Classifies a new point based on the majority label of its **k** closest neighbors.
 
-**Advantages:**  
+**Advantages:**
 
-- Easy to interpret and visualize.
-- Handles both numerical and categorical data.
-- Requires little data preprocessing (e.g., no need for normalization).
+- Simple and intuitive.
+- No training phase (lazy learning).
+- Naturally handles multi-class problems.
 
-**Disadvantages:** 
+**Disadvantages:**
 
-- Prone to overfitting (especially if the tree is too deep).
-- Small changes in data can result in a completely different tree (high variance).
-- Less accurate than ensemble methods.
-
-
+- Slow prediction time as dataset size grows.
+- Sensitive to irrelevant features and the choice of distance metric.
+- Struggles with high-dimensional data (curse of dimensionality).

@@ -1,5 +1,5 @@
 ---
-title: "Forecasting Heart Disease Risks: Decision Trees"
+title: "Forecasting Heart Disease Risks: Random Forest"
 output:
   flexdashboard::flex_dashboard:
     logo: "../image/logo.gif"
@@ -131,23 +131,21 @@ knitr::include_graphics("../image/heart.png")
 Column {data-width=150 .tabset}
 -----------------------------------------------------------------------
 
-### Decision Trees
+### Random Forest
 
-**Overview:**  
+**Overview:** 
 
-- A model that splits the data into branches to form a tree based on feature values.
-- Each internal node represents a decision rule, and each leaf node represents an outcome.
+- An ensemble of decision trees where each tree is trained on a random subset of the data.
+- The final prediction is the majority vote (classification) or average (regression) of all trees.
 
 **Advantages:**  
 
-- Easy to interpret and visualize.
-- Handles both numerical and categorical data.
-- Requires little data preprocessing (e.g., no need for normalization).
+- Reduces overfitting compared to individual decision trees.
+- Handles missing values and maintains accuracy for a large portion of missing data.
+- Works well for both classification and regression.
 
-**Disadvantages:** 
+**Disadvantages:**
 
-- Prone to overfitting (especially if the tree is too deep).
-- Small changes in data can result in a completely different tree (high variance).
-- Less accurate than ensemble methods.
-
-
+- Can be computationally intensive with many trees.
+- Less interpretable than a single decision tree.
+- May not perform well on very high-dimensional sparse data.

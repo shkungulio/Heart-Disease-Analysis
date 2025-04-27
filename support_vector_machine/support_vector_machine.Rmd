@@ -1,5 +1,5 @@
 ---
-title: "Forecasting Heart Disease Risks: Decision Trees"
+title: "Forecasting Heart Disease Risks: Support Vector Machine (SVM)"
 output:
   flexdashboard::flex_dashboard:
     logo: "../image/logo.gif"
@@ -131,23 +131,22 @@ knitr::include_graphics("../image/heart.png")
 Column {data-width=150 .tabset}
 -----------------------------------------------------------------------
 
-### Decision Trees
+### Support Vector Machine
 
-**Overview:**  
+**Overview:** 
 
-- A model that splits the data into branches to form a tree based on feature values.
-- Each internal node represents a decision rule, and each leaf node represents an outcome.
+- A classifier that finds the hyperplane that best separates different classes.
+- Can use kernel tricks to handle non-linear boundaries.
 
-**Advantages:**  
+**Advantages:**
 
-- Easy to interpret and visualize.
-- Handles both numerical and categorical data.
-- Requires little data preprocessing (e.g., no need for normalization).
+- Effective in high-dimensional spaces.
+- Memory efficient (uses a subset of training points as support vectors).
+- Versatile (different kernel functions can be used).
 
-**Disadvantages:** 
+**Disadvantages:**
 
-- Prone to overfitting (especially if the tree is too deep).
-- Small changes in data can result in a completely different tree (high variance).
-- Less accurate than ensemble methods.
-
+- Computationally expensive with large datasets.
+- Choosing the right kernel and tuning parameters can be challenging.
+- Doesn't directly provide probability estimates (unless calibrated separately).
 

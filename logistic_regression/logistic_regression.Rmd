@@ -1,5 +1,5 @@
 ---
-title: "Forecasting Heart Disease Risks: Decision Trees"
+title: "Forecasting Heart Disease Risks: Logistic Regression"
 output:
   flexdashboard::flex_dashboard:
     logo: "../image/logo.gif"
@@ -131,23 +131,23 @@ knitr::include_graphics("../image/heart.png")
 Column {data-width=150 .tabset}
 -----------------------------------------------------------------------
 
-### Decision Trees
+### Logistic Regression
 
 **Overview:**  
 
-- A model that splits the data into branches to form a tree based on feature values.
-- Each internal node represents a decision rule, and each leaf node represents an outcome.
+- A statistical model used for binary classification tasks.
+- Predicts the probability of a binary outcome (e.g., yes/no, 0/1) using a logistic (sigmoid) function.
 
 **Advantages:**  
 
-- Easy to interpret and visualize.
-- Handles both numerical and categorical data.
-- Requires little data preprocessing (e.g., no need for normalization).
+- Simple to implement and interpret.
+- Requires less computational resources.
+- Works well when the relationship between features and the target is linear.
+- Outputs calibrated probabilities.
 
-**Disadvantages:** 
+**Disadvantages:**  
 
-- Prone to overfitting (especially if the tree is too deep).
-- Small changes in data can result in a completely different tree (high variance).
-- Less accurate than ensemble methods.
-
+- Assumes linearity between input variables and the log-odds of the output.
+- Poor performance with complex relationships.
+- Sensitive to outliers and multicollinearity.
 

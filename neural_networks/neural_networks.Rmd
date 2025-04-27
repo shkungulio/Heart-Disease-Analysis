@@ -1,5 +1,5 @@
 ---
-title: "Forecasting Heart Disease Risks: Decision Trees"
+title: "Forecasting Heart Disease Risks: Neural Networks"
 output:
   flexdashboard::flex_dashboard:
     logo: "../image/logo.gif"
@@ -131,23 +131,22 @@ knitr::include_graphics("../image/heart.png")
 Column {data-width=150 .tabset}
 -----------------------------------------------------------------------
 
-### Decision Trees
+### Neural Networks
 
-**Overview:**  
+**Overview:**
+  
+- A collection of interconnected nodes (neurons) organized in layers.
+- Can model complex, non-linear relationships through deep learning.
 
-- A model that splits the data into branches to form a tree based on feature values.
-- Each internal node represents a decision rule, and each leaf node represents an outcome.
+**Advantages:**
+ 
+- Highly flexible and capable of capturing complex patterns.
+- Scales well with large datasets.
+- State-of-the-art performance in fields like image and speech recognition.
 
-**Advantages:**  
+**Disadvantages:**
 
-- Easy to interpret and visualize.
-- Handles both numerical and categorical data.
-- Requires little data preprocessing (e.g., no need for normalization).
-
-**Disadvantages:** 
-
-- Prone to overfitting (especially if the tree is too deep).
-- Small changes in data can result in a completely different tree (high variance).
-- Less accurate than ensemble methods.
-
+- Requires large amounts of data and computing power.
+- Difficult to interpret (black box).
+- Prone to overfitting if not properly regularized.
 

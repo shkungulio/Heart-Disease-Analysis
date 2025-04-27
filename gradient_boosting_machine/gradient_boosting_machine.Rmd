@@ -1,5 +1,5 @@
 ---
-title: "Forecasting Heart Disease Risks: Decision Trees"
+title: "Forecasting Heart Disease Risks: Gradient Boosting Machine (GBM)"
 output:
   flexdashboard::flex_dashboard:
     logo: "../image/logo.gif"
@@ -131,23 +131,22 @@ knitr::include_graphics("../image/heart.png")
 Column {data-width=150 .tabset}
 -----------------------------------------------------------------------
 
-### Decision Trees
+### Gradient Boosting Machine
 
-**Overview:**  
+**Overview:**
 
-- A model that splits the data into branches to form a tree based on feature values.
-- Each internal node represents a decision rule, and each leaf node represents an outcome.
+- An ensemble technique that builds trees sequentially, each one learning from the errors of the previous.
+- Focuses on reducing bias and improving predictive accuracy.
 
-**Advantages:**  
+**Advantages:**
 
-- Easy to interpret and visualize.
-- Handles both numerical and categorical data.
-- Requires little data preprocessing (e.g., no need for normalization).
+- High predictive performance.
+- Can handle various types of predictor variables.
+- Offers flexibility through different loss functions.
 
-**Disadvantages:** 
+**Disadvantages:**
 
-- Prone to overfitting (especially if the tree is too deep).
-- Small changes in data can result in a completely different tree (high variance).
-- Less accurate than ensemble methods.
-
+- Computationally intensive and slower to train.
+- Sensitive to overfitting if not tuned carefully.
+- Many hyperparameters to tune (can be complex to optimize).
 

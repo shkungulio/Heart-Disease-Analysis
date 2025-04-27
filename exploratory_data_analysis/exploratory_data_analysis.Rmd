@@ -1,7 +1,8 @@
 ---
-title: "Forecasting Heart Disease Risks: Exploratory Data Analysis"
+title: "Forecasting Heart Disease Risks: Exploratory Data Analysis (EDA)"
 output:
   flexdashboard::flex_dashboard:
+    logo: "../image/logo.gif"
     theme:
       version: 4
       bootswatch: cosmo
@@ -54,7 +55,7 @@ library(corrplot)
 library(GGally)
 ```
 
-Column {data-width=700 .tabset}
+Column {data-width=700 .tabset .tabset-fade}
 -----------------------------------------------------------------------
 
 ### BUSINESS UNDERSTANDING
@@ -225,6 +226,18 @@ for (col in names(categorical_columns)) {
 }
 ```
 
+#### **Handle Outliers**
+Apply multiple filtering conditions to remove outliers
+```{r}
+Heart.df <- Heart.df[Heart.df$age > 40 &
+                       Heart.df$trestbps < 170 & 
+                       Heart.df$chol < 340 & 
+                       Heart.df$chol > 150 &
+                       Heart.df$thalach > 115 &
+                       Heart.df$oldpeak < 2.4, ]
+```
+
+
 ####
 
 <br>
@@ -382,7 +395,21 @@ ggpairs(Heart.df[, c("age", "trestbps", "chol",
 ```
 
 ##### **Pair Plots Interpretation and Analysis**
+The distribution of **Age** between patients with and without heart disease overlaps considerably. However, individuals without heart disease ("No") tend to have a slightly younger age distribution. The boxplot comparison highlights this difference, though it is not particularly dramatic.
 
+Looking at **Trestbps** (resting blood pressure), there is a modest positive correlation with age overall (0.273). Interestingly, patients without heart disease show a slightly stronger correlation (0.297) compared to those diagnosed with heart disease (0.206).
+
+When examining **Chol** (cholesterol levels), correlations with other variables are very weak in both the "Yes" and "No" groups. Cholesterol does not appear to be a strong factor for separating patients with heart disease from those without, based on the current plots.
+
+In contrast, **Thalach** (maximum heart rate achieved) shows a strong negative correlation with age, particularly among patients without heart disease (No: -0.444***). This suggests that patients without heart disease are able to achieve higher maximum heart rates compared to those with heart disease.
+
+**Oldpeak** (measuring ST depression induced by exercise) exhibits a moderate positive correlation with age, especially for patients without heart disease (No: 0.191). Higher Oldpeak values are more commonly associated with the presence of heart disease.
+
+Focusing on the **Target** variable (indicating heart disease "Yes" or "No"), Oldpeak and Thalach demonstrate the clearest separation between groups. Patients with heart disease typically exhibit higher Oldpeak values and lower Thalach values.
+
+Among all variables, the strongest correlations observed are the negative relationships between **thalach** and **age**, and between **oldpeak** and **thalach**. Despite these findings, most variables individually do not display extremely strong correlations.
+
+In summary, **older patients** tend to have **lower maximum heart rates**, and **higher Oldpeak values** are linked to a **greater risk of heart disease**. Meanwhile, **cholesterol and resting blood pressure** do not visually differentiate heart disease patients from healthy individuals in this analysis.
 
 <br>
 
@@ -405,7 +432,7 @@ corrplot(correlation_matrix, method = "circle",
 
 
 
-Column {data-width=300 .tabset}
+Column {data-width=250 .tabset .tabset-fade}
 -----------------------------------------------------------------------
 
 ### PROBLEM STATEMENT
@@ -417,9 +444,16 @@ For exploratory purposes, the project aims to investigate and uncover patterns i
 - Identify possible interaction effects between variables that influence the risk of heart disease.
 - Use data visualization tools (e.g., correlation matrices, bar plots, boxplots) to make findings interpretable and actionable for non-technical stakeholders.
 
+####
+
+```{r echo=FALSE, out.width = "60%", fig.align = "center"}
+knitr::include_graphics("../image/heart.png")
+```
 
 
-### CONCLUSIONS
+
+
+### CONCLUSION
 
 ```{r}
 
