@@ -1,0 +1,86 @@
+---
+title: "Forecasting Heart Disease Risks: Decision Trees"
+output: 
+  flexdashboard::flex_dashboard:
+    theme:
+      version: 4
+      bootswatch: cosmo
+      base_font:
+        google: Prompt
+      code_font:
+        google: JetBrains Mono
+    orientation: columns
+    #vertical_layout: fill
+---
+
+<style>
+body {
+  font-size: 18px;
+}
+h4 {
+  font-size: 22px;
+}
+h1, h2, h3 {
+  font-size: 28px;
+}
+</style>
+
+
+```{r setup, include=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(flexdashboard)
+#Install thematic and un-comment for themed static plots (i.e., ggplot2)
+#thematic::thematic_rmd(font = "auto")
+
+# Install necessary packages if they are not already installed.
+if (!requireNamespace("RCurl", quietly = TRUE)) {
+  install.packages("RCurl")
+}
+if (!requireNamespace("tidyverse", quietly = TRUE)) {
+  install.packages("tidyverse")
+}
+if (!requireNamespace("patchwork", quietly = TRUE)) {
+  install.packages("patchwork")
+}
+if (!requireNamespace("corrplot", quietly = TRUE)) {
+  install.packages("corrplot")
+}
+
+# Load the required libraries
+library(RCurl)
+library(tidyverse)
+library(patchwork)
+library(corrplot)
+library(GGally)
+```
+
+Column {data-width=700 .tabset}
+-----------------------------------------------------------------------
+
+### BUSINESS UNDERSTANDING
+
+```{r}
+
+```
+
+### Chart B
+
+```{r}
+
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart C
+
+```{r}
+
+```
+
+### Chart D
+
+```{r}
+
+```
+
