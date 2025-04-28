@@ -16,13 +16,13 @@ output:
 
 <style>
 body {
-  font-size: 16px;
+  font-size: 14px;
 }
 h4 {
-  font-size: 24px;
+  font-size: 20px;
 }
 h1, h2, h3 {
-  font-size: 28px;
+  font-size: 24px;
 }
 </style>
 
@@ -58,7 +58,7 @@ library(GGally)
 Column {data-width=600 .tabset}
 -----------------------------------------------------------------------
 
-### BUSINESS UNDERSTANDING
+### Business Understanding
 
 ```{r}
 
@@ -66,7 +66,64 @@ Column {data-width=600 .tabset}
 
 
 
-### DATA UNDERSTANDING
+### Data Understanding
+
+#### **Data Collection**
+The dataset used is the **Heart Disease** dataset from the **UCI Machine Learning Repository**. It is a compilation of four databases (Cleveland, Hungary, Switzerland, and Long Beach VA), but most studies (and this project) focus primarily on the **Cleveland dataset**, which has the most complete records.
+
+The dataset contains various features related to patients' health and demographic information. We will explore the dataset to understand its structure and relationships between variables.
+
+#### **Data Description**
+The dataset contains 14 key attributes that are either numerical or categorical. These attributes are:
+
+  1. **age:** Age of the patient (numeric)
+  2. **sex:** Gender of the patient (1 = male, 0 = female)
+  3. **cp:** Chest pain type (categorical: 1-4)
+  4. **trestbps:** Resting blood pressure (numeric)
+  5. **chol:** Serum cholesterol (numeric)
+  6. **fbs:** Fasting blood sugar (1 = true, 0 = false)
+  7. **restecg:** Resting electrocardiographic results (categorical)
+  8. **thalach:** Maximum heart rate achieved (numeric)
+  9. **exang:** Exercise-induced angina (1 = yes, 0 = no)
+  10. **oldpeak:** ST depression induced by exercise (numeric)
+  11. **slope:** The slope of the peak exercise ST segment (categorical)
+  12. **ca:** Number of major vessels (0-3, numeric)
+  13. **thal:** Thalassemia (categorical: 1 = normal, 2 = fixed defect, 3 = reversible defect)
+  14. **target:** Heart disease (1 = disease, 0 = no disease)  
+  
+> **Note:** Some fields (e.g., "ca" and "thal") may contain missing or invalid values coded as '?', which need attention during preprocessing.
+  
+#### **Data Dictionary**
+The dataset contains **303 instances (patients)** and **14 main attributes** plus the target variable (presence or absence of heart disease).
+  
+|**Attribute**| **Data Type** | **Description** | **Contraints/Rules** |
+|:--------------|:---------|:----------------|:---------------------|
+| **`age`** | Numerical | The age of the patient in years | Range: 29 - 77 (Based on the dataset statistics) |
+| **`sex`** | Categorical | The gender of the patient | Values: 1 = Male, 0 = Female |
+| **`cp`** | Categorical | Type of chest pain experienced by the patient | Values: 1 = Typical angina, 2 = Atypical angina, 3 = Non-anginal pain, 4 = Asymptomatic |
+| **`trestbps`** | Numerical | Resting blood pressure of the patient, measured in mmHg | Range: Typically, between 94 and 200 mmHg |
+| **`chol`** | Numerical | Serum cholesterol level in mg/dl | Range: Typically, between 126 and 564 mg/dl |
+| **`fbs`** | Categorical | Fasting blood sugar level > 120 mg/dl | Values: 1 = True, 0 = False |
+| **`restecg`** | Categorical | Results of the patient’s resting electrocardiogram | Values: 0 = Normal, 1 = ST-T wave abnormality, 2 = Probable or definite left ventricular hypertrophy |
+| **`thalach`** | Numerical | Maximum heart rate achieved during a stress test | Range: Typically, between 71 and 202 bpm |
+| **`exang`** | Categorical | Whether the patient experiences exercise-induced angina | Values: 1 = Yes, 0 = No |
+| **`oldpeak`** | Numerical | ST depression induced by exercise relative to rest (an ECG measure) | Range: 0.0 to 6.2 (higher values indicate more severe abnormalities) |
+| **`slope`** | Categorical | Slope of the peak exercise ST segment | Values: 1 = Upsloping, 2 = Flat, 3 = Downsloping |
+| **`ca`** | Numerical | Number of major vessels colored by fluoroscopy | Range: 0-3 |
+| **`thal`** | Categorical | Blood disorder variable related to thalassemia | Values: 3 = Normal, 6 = Fixed defect, 7 = Reversible defect |
+| **`target`** | Categorical | Diagnosis of heart disease | Values: 0 = No heart disease, 1 = Presence of heart disease |
+
+#### **Initial Data Quality Assessment**
+- **Missing Values**: Some fields like `ca` and `thal` may have missing values or unknown entries ('?').
+- **Data Types**: Some categorical variables are encoded numerically and will need to be interpreted correctly during analysis.
+- **Class Imbalance**: Preliminary checks suggest the dataset is relatively balanced between presence and absence of disease, but this will be verified.
+- **Outliers**: Numerical fields such as `chol` (cholesterol) and `trestbps` (blood pressure) may have outliers that need to be detected and considered in analysis.
+
+
+
+
+
+### Data Preparation
 
 ```{r}
 
@@ -74,7 +131,7 @@ Column {data-width=600 .tabset}
 
 
 
-### DATA PREPARATION
+### Modeling
 
 ```{r}
 
@@ -82,27 +139,13 @@ Column {data-width=600 .tabset}
 
 
 
-### MODELING
+### Evaluation
 
 ```{r}
 
 ```
 
 
-
-### EVALUATION
-
-```{r}
-
-```
-
-
-
-### DEPLOYMENT
-
-```{r}
-
-```
 
 
 
@@ -110,7 +153,7 @@ Column {data-width=600 .tabset}
 Column {data-width=250 .tabset}
 -----------------------------------------------------------------------
 
-### PROBLEM STATEMENT
+### Problem Statement
 
 ```{r}
 
@@ -122,7 +165,7 @@ Column {data-width=250 .tabset}
 knitr::include_graphics("../image/heart.png")
 ```
 
-### CONCLUSION
+### Conclusion
 
 ```{r}
 

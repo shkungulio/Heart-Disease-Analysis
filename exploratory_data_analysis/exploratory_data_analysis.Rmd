@@ -16,13 +16,13 @@ output:
 
 <style>
 body {
-  font-size: 16px;
+  font-size: 14px;
 }
 h4 {
-  font-size: 24px;
+  font-size: 20px;
 }
 h1, h2, h3 {
-  font-size: 28px;
+  font-size: 24px;
 }
 </style>
 
@@ -58,7 +58,7 @@ library(GGally)
 Column {data-width=700 .tabset .tabset-fade}
 -----------------------------------------------------------------------
 
-### BUSINESS UNDERSTANDING
+### Business Understanding
 
 #### **Background**
 Heart disease is a leading global health concern, accounting for a significant number of deaths each year. It encompasses various conditions affecting the heart, including coronary artery disease, heart attacks, and arrhythmias. Early detection and accurate diagnosis are critical in preventing complications, reducing healthcare costs, and improving patient outcomes.
@@ -79,7 +79,7 @@ At this stage, **no predictive model** is being developed. The goal is purely **
 
 
 
-### DATA UNDERSTANDING
+### Data Understanding
 
 #### **Data Collection**
 The dataset used is the **Heart Disease** dataset from the **UCI Machine Learning Repository**. It is a compilation of four databases (Cleveland, Hungary, Switzerland, and Long Beach VA), but most studies (and this project) focus primarily on the **Cleveland dataset**, which has the most complete records.
@@ -134,7 +134,7 @@ The dataset contains **303 instances (patients)** and **14 main attributes** plu
 
 
 
-### DATA PREPARATION
+### Data Preparation
 
 #### **Data Loading**
 Load the dataset from UCI website using RCurl library
@@ -243,7 +243,7 @@ Heart.df <- Heart.df[Heart.df$age > 40 &
 <br>
 
 
-### VISUALIZATION
+### Visualization
 
 #### **Custom Functions**
 Function to create Box plots
@@ -435,7 +435,7 @@ corrplot(correlation_matrix, method = "circle",
 Column {data-width=250 .tabset .tabset-fade}
 -----------------------------------------------------------------------
 
-### PROBLEM STATEMENT
+### Problem Statement
 
 For exploratory purposes, the project aims to investigate and uncover patterns in patient demographics, clinical features, and diagnostic results that correlate with the presence or absence of heart disease. Specifically, the project will:
 
@@ -453,7 +453,7 @@ knitr::include_graphics("../image/heart.png")
 
 
 
-### CONCLUSION
+### Conclusion
 
 ```{r}
 

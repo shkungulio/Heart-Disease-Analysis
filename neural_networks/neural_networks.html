@@ -2774,49 +2774,219 @@ window.FlexDashboardComponents.push({
 
 <style>
 body {
-font-size: 16px;
+font-size: 14px;
 }
 h4 {
-font-size: 24px;
+font-size: 20px;
 }
 h1, h2, h3 {
-font-size: 28px;
+font-size: 24px;
 }
 </style>
 <div id="column" class="section level2 tabset" data-width="600">
 <h2 class="tabset">Column</h2>
 <div id="business-understanding" class="section level3">
-<h3>BUSINESS UNDERSTANDING</h3>
+<h3>Business Understanding</h3>
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
 </div>
 <div id="data-understanding" class="section level3">
-<h3>DATA UNDERSTANDING</h3>
-<div class="knitr-options" data-fig-width="576" data-fig-height="460">
-
+<h3>Data Understanding</h3>
+<div id="data-collection" class="section level4">
+<h4><strong>Data Collection</strong></h4>
+<p>The dataset used is the <strong>Heart Disease</strong> dataset from
+the <strong>UCI Machine Learning Repository</strong>. It is a
+compilation of four databases (Cleveland, Hungary, Switzerland, and Long
+Beach VA), but most studies (and this project) focus primarily on the
+<strong>Cleveland dataset</strong>, which has the most complete
+records.</p>
+<p>The dataset contains various features related to patients’ health and
+demographic information. We will explore the dataset to understand its
+structure and relationships between variables.</p>
+</div>
+<div id="data-description" class="section level4">
+<h4><strong>Data Description</strong></h4>
+<p>The dataset contains 14 key attributes that are either numerical or
+categorical. These attributes are:</p>
+<ol style="list-style-type: decimal">
+<li><strong>age:</strong> Age of the patient (numeric)</li>
+<li><strong>sex:</strong> Gender of the patient (1 = male, 0 =
+female)</li>
+<li><strong>cp:</strong> Chest pain type (categorical: 1-4)</li>
+<li><strong>trestbps:</strong> Resting blood pressure (numeric)</li>
+<li><strong>chol:</strong> Serum cholesterol (numeric)</li>
+<li><strong>fbs:</strong> Fasting blood sugar (1 = true, 0 = false)</li>
+<li><strong>restecg:</strong> Resting electrocardiographic results
+(categorical)</li>
+<li><strong>thalach:</strong> Maximum heart rate achieved (numeric)</li>
+<li><strong>exang:</strong> Exercise-induced angina (1 = yes, 0 =
+no)</li>
+<li><strong>oldpeak:</strong> ST depression induced by exercise
+(numeric)</li>
+<li><strong>slope:</strong> The slope of the peak exercise ST segment
+(categorical)</li>
+<li><strong>ca:</strong> Number of major vessels (0-3, numeric)</li>
+<li><strong>thal:</strong> Thalassemia (categorical: 1 = normal, 2 =
+fixed defect, 3 = reversible defect)</li>
+<li><strong>target:</strong> Heart disease (1 = disease, 0 = no
+disease)</li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> Some fields (e.g., “ca” and “thal”) may
+contain missing or invalid values coded as ‘?’, which need attention
+during preprocessing.</p>
+</blockquote>
+</div>
+<div id="data-dictionary" class="section level4">
+<h4><strong>Data Dictionary</strong></h4>
+<p>The dataset contains <strong>303 instances (patients)</strong> and
+<strong>14 main attributes</strong> plus the target variable (presence
+or absence of heart disease).</p>
+<table>
+<colgroup>
+<col width="23%" />
+<col width="15%" />
+<col width="26%" />
+<col width="34%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left"><strong>Attribute</strong></th>
+<th align="left"><strong>Data Type</strong></th>
+<th align="left"><strong>Description</strong></th>
+<th align="left"><strong>Contraints/Rules</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><strong><code>age</code></strong></td>
+<td align="left">Numerical</td>
+<td align="left">The age of the patient in years</td>
+<td align="left">Range: 29 - 77 (Based on the dataset statistics)</td>
+</tr>
+<tr class="even">
+<td align="left"><strong><code>sex</code></strong></td>
+<td align="left">Categorical</td>
+<td align="left">The gender of the patient</td>
+<td align="left">Values: 1 = Male, 0 = Female</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong><code>cp</code></strong></td>
+<td align="left">Categorical</td>
+<td align="left">Type of chest pain experienced by the patient</td>
+<td align="left">Values: 1 = Typical angina, 2 = Atypical angina, 3 =
+Non-anginal pain, 4 = Asymptomatic</td>
+</tr>
+<tr class="even">
+<td align="left"><strong><code>trestbps</code></strong></td>
+<td align="left">Numerical</td>
+<td align="left">Resting blood pressure of the patient, measured in
+mmHg</td>
+<td align="left">Range: Typically, between 94 and 200 mmHg</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong><code>chol</code></strong></td>
+<td align="left">Numerical</td>
+<td align="left">Serum cholesterol level in mg/dl</td>
+<td align="left">Range: Typically, between 126 and 564 mg/dl</td>
+</tr>
+<tr class="even">
+<td align="left"><strong><code>fbs</code></strong></td>
+<td align="left">Categorical</td>
+<td align="left">Fasting blood sugar level &gt; 120 mg/dl</td>
+<td align="left">Values: 1 = True, 0 = False</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong><code>restecg</code></strong></td>
+<td align="left">Categorical</td>
+<td align="left">Results of the patient’s resting electrocardiogram</td>
+<td align="left">Values: 0 = Normal, 1 = ST-T wave abnormality, 2 =
+Probable or definite left ventricular hypertrophy</td>
+</tr>
+<tr class="even">
+<td align="left"><strong><code>thalach</code></strong></td>
+<td align="left">Numerical</td>
+<td align="left">Maximum heart rate achieved during a stress test</td>
+<td align="left">Range: Typically, between 71 and 202 bpm</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong><code>exang</code></strong></td>
+<td align="left">Categorical</td>
+<td align="left">Whether the patient experiences exercise-induced
+angina</td>
+<td align="left">Values: 1 = Yes, 0 = No</td>
+</tr>
+<tr class="even">
+<td align="left"><strong><code>oldpeak</code></strong></td>
+<td align="left">Numerical</td>
+<td align="left">ST depression induced by exercise relative to rest (an
+ECG measure)</td>
+<td align="left">Range: 0.0 to 6.2 (higher values indicate more severe
+abnormalities)</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong><code>slope</code></strong></td>
+<td align="left">Categorical</td>
+<td align="left">Slope of the peak exercise ST segment</td>
+<td align="left">Values: 1 = Upsloping, 2 = Flat, 3 = Downsloping</td>
+</tr>
+<tr class="even">
+<td align="left"><strong><code>ca</code></strong></td>
+<td align="left">Numerical</td>
+<td align="left">Number of major vessels colored by fluoroscopy</td>
+<td align="left">Range: 0-3</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong><code>thal</code></strong></td>
+<td align="left">Categorical</td>
+<td align="left">Blood disorder variable related to thalassemia</td>
+<td align="left">Values: 3 = Normal, 6 = Fixed defect, 7 = Reversible
+defect</td>
+</tr>
+<tr class="even">
+<td align="left"><strong><code>target</code></strong></td>
+<td align="left">Categorical</td>
+<td align="left">Diagnosis of heart disease</td>
+<td align="left">Values: 0 = No heart disease, 1 = Presence of heart
+disease</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="initial-data-quality-assessment" class="section level4">
+<h4><strong>Initial Data Quality Assessment</strong></h4>
+<ul>
+<li><strong>Missing Values</strong>: Some fields like <code>ca</code>
+and <code>thal</code> may have missing values or unknown entries
+(‘?’).</li>
+<li><strong>Data Types</strong>: Some categorical variables are encoded
+numerically and will need to be interpreted correctly during
+analysis.</li>
+<li><strong>Class Imbalance</strong>: Preliminary checks suggest the
+dataset is relatively balanced between presence and absence of disease,
+but this will be verified.</li>
+<li><strong>Outliers</strong>: Numerical fields such as
+<code>chol</code> (cholesterol) and <code>trestbps</code> (blood
+pressure) may have outliers that need to be detected and considered in
+analysis.</li>
+</ul>
 </div>
 </div>
 <div id="data-preparation" class="section level3">
-<h3>DATA PREPARATION</h3>
+<h3>Data Preparation</h3>
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
 </div>
 <div id="modeling" class="section level3">
-<h3>MODELING</h3>
+<h3>Modeling</h3>
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
 </div>
 <div id="evaluation" class="section level3">
-<h3>EVALUATION</h3>
-<div class="knitr-options" data-fig-width="576" data-fig-height="460">
-
-</div>
-</div>
-<div id="deployment" class="section level3">
-<h3>DEPLOYMENT</h3>
+<h3>Evaluation</h3>
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
@@ -2825,7 +2995,7 @@ font-size: 28px;
 <div id="column-1" class="section level2 tabset" data-width="250">
 <h2 class="tabset">Column</h2>
 <div id="problem-statement" class="section level3">
-<h3>PROBLEM STATEMENT</h3>
+<h3>Problem Statement</h3>
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
@@ -2838,7 +3008,7 @@ font-size: 28px;
 </div>
 </div>
 <div id="conclusion" class="section level3">
-<h3>CONCLUSION</h3>
+<h3>Conclusion</h3>
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
