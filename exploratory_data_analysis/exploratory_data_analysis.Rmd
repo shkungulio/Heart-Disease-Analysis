@@ -89,19 +89,19 @@ The dataset contains various features related to patients' health and demographi
 #### **Data Description**
 The dataset contains 14 key attributes that are either numerical or categorical. These attributes are:
 
-  1. **age:** Age of the patient (numeric)
-  2. **sex:** Gender of the patient (1 = male, 0 = female)
-  3. **cp:** Chest pain type (categorical: 1-4)
-  4. **trestbps:** Resting blood pressure (numeric)
-  5. **chol:** Serum cholesterol (numeric)
-  6. **fbs:** Fasting blood sugar (1 = true, 0 = false)
-  7. **restecg:** Resting electrocardiographic results (categorical)
-  8. **thalach:** Maximum heart rate achieved (numeric)
-  9. **exang:** Exercise-induced angina (1 = yes, 0 = no)
-  10. **oldpeak:** ST depression induced by exercise (numeric)
-  11. **slope:** The slope of the peak exercise ST segment (categorical)
-  12. **ca:** Number of major vessels (0-3, numeric)
-  13. **thal:** Thalassemia (categorical: 1 = normal, 2 = fixed defect, 3 = reversible defect)
+  1. **`age`:** Age of the patient (numeric)
+  2. **`sex`:** Gender of the patient (1 = male, 0 = female)
+  3. **`cp`:** Chest pain type (categorical: 1-4)
+  4. **`trestbps`:** Resting blood pressure (numeric)
+  5. **`chol`:** Serum cholesterol (numeric)
+  6. **`fbs`:** Fasting blood sugar (1 = true, 0 = false)
+  7. **`restecg`:** Resting electrocardiographic results (categorical)
+  8. **`thalach`:** Maximum heart rate achieved (numeric)
+  9. **`exang`:** Exercise-induced angina (1 = yes, 0 = no)
+  10. **`oldpeak`:** ST depression induced by exercise (numeric)
+  11. **`slope`:** The slope of the peak exercise ST segment (categorical)
+  12. **`ca`:** Number of major vessels (0-3, numeric)
+  13. **`thal`:** Thalassemia (categorical: 1 = normal, 2 = fixed defect, 3 = reversible defect)
   14. **target:** Heart disease (1 = disease, 0 = no disease)  
   
 > **Note:** Some fields (e.g., "ca" and "thal") may contain missing or invalid values coded as '?', which need attention during preprocessing.
