@@ -1,0 +1,69 @@
+In the CRISP-DM (Cross-Industry Standard Process for Data Mining) methodology, the number and type of visualizations used in a machine learning project aren't strictly defined, but best practices suggest **using visuals strategically** at each phase to enhance understanding, communication, and decision-making. Here's a phase-by-phase breakdown of **typical and suitable visualizations**, including guidance on quantity:
+
+
+
+### **1. Business Understanding**
+- **Goal:** Understand project objectives and requirements from a business perspective.
+- **Visuals:**
+  - Project scope diagrams
+  - Stakeholder maps
+  - Flowcharts or business process diagrams
+- **How many?** 1–3 visuals to outline objectives, metrics, and stakeholders.
+
+
+
+### **2. Data Understanding**
+- **Goal:** Familiarize with the data, identify quality issues, discover initial insights.
+- **Visuals:**
+  - Histograms, bar plots, box plots (for univariate analysis)
+  - Scatter plots, pair plots (for bivariate/multivariate relationships)
+  - Correlation heatmaps
+  - Missing data matrix or heatmap
+- **How many?** 5–15 depending on the dataset size and complexity. Prioritize coverage over redundancy.
+
+
+
+### **3. Data Preparation**
+- **Goal:** Clean and transform data for modeling.
+- **Visuals:**
+  - Before/after comparison plots of data distributions
+  - Feature distributions (transformed vs original)
+  - Outlier detection visuals (boxplots, z-score plots)
+- **How many?** 3–10, focused on key transformations and their justifications.
+
+
+
+### **4. Modeling**
+- **Goal:** Build and evaluate models.
+- **Visuals:**
+  - Learning curves
+  - Confusion matrix
+  - ROC curves, precision-recall curves
+  - Feature importance bar charts or SHAP value plots
+- **How many?** 4–8 per model, depending on the type and number of models compared.
+
+
+
+### **5. Evaluation**
+- **Goal:** Assess model performance in the business context.
+- **Visuals:**
+  - Side-by-side performance comparison (e.g., bar plots, radar charts)
+  - Cost-benefit or profit curves (if applicable)
+  - KPI impact visuals
+- **How many?** 2–5 focused on aligning model output with business goals.
+
+
+
+### **6. Deployment**
+- **Goal:** Put the model into production and plan for monitoring.
+- **Visuals:**
+  - System architecture diagrams
+  - Model monitoring dashboards (drift, accuracy over time)
+- **How many?** 1–3 for communication and technical planning.
+
+
+
+### ✅ **General Guideline:**
+- Total: **15–40 visuals** across the project is common.
+- Focus on **clarity, purpose, and stakeholder needs**.
+- Avoid visual clutter—each chart should convey a unique insight.
